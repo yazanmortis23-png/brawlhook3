@@ -24,7 +24,6 @@
 #include "../features/hitbox.h"
 #include "../features/respawn_timer.h"
 #include "../features/tile_grid.h"
-#include "../features/menu.h"
 #include "../../game/offsets_69252.h"
 
 // Trampoline pointers (to call original functions)
