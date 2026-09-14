@@ -165,7 +165,7 @@ int hook_eglSwapBuffers(void* display, void* surface) {
     }
 
     // Мод-меню
-    ui::menu::render();
+    //ui::menu::render();
 
     // Вызвать оригинал
     return reinterpret_cast<eglSwapBuffers_t>(orig_eglSwapBuffers)(display, surface);
