@@ -10,11 +10,14 @@ add_library(brawlhook SHARED
     hooks/game_hooks.cpp
 )
 
+# حل مشكلة المسارات النسبية لتطابق أي مكان يطلبه الكود
 target_include_directories(brawlhook PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/game
     ${CMAKE_CURRENT_SOURCE_DIR}/hooks
     ${CMAKE_CURRENT_SOURCE_DIR}/features
+    ${CMAKE_CURRENT_SOURCE_DIR}/../
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../
 )
 
 target_link_libraries(brawlhook
