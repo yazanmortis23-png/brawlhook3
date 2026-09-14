@@ -22,7 +22,7 @@
 //   Записывать в entity::ROTATION (0x2C)
 // ============================================================================
 
-#include "../game/offsets_69252.h"
+#include "../../game/offsets_69252.h"
 #include <cstdint>
 #include <cstring>
 #include <cmath>
