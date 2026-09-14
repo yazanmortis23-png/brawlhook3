@@ -1,4 +1,4 @@
-name: Build BrawlHook
+name: Build BrawlHook Automatically
 
 on: [push, workflow_dispatch]
 
@@ -8,6 +8,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Fix Include Paths Automatically
+        run: |
+          echo "Fixing relative paths for header files..."
+          # تعديل مسارات الأوفستس في كل ملفات الـ features والـ hooks لتطابق مكانها الصحيح
+          find features/ hooks/ -name "*.h" -o -name "*.cpp" | xargs sed -i 's|\.\./\.\./game/offsets_69252\.h|game/offsets_69252.h|g'
 
       - name: Download and Setup Android NDK
         run: |
