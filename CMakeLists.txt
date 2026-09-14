@@ -7,18 +7,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(brawlhook SHARED
     main.cpp
+    hooks/game_hooks.cpp
 )
 
 target_include_directories(brawlhook PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/../game
+    ${CMAKE_CURRENT_SOURCE_DIR}/game
+    ${CMAKE_CURRENT_SOURCE_DIR}/hooks
+    ${CMAKE_CURRENT_SOURCE_DIR}/features
 )
 
 target_link_libraries(brawlhook
-    log         # android logging
-    dl          # dlopen/dlsym
-    EGL         # eglSwapBuffers hook
-    GLESv2      # OpenGL ES for ESP rendering
+    log           # android logging
+    dl            # dlopen/dlsym
+    EGL           # eglSwapBuffers hook
+    GLESv2        # OpenGL ES for ESP rendering
 )
 
 # Strip debug info for smaller size
