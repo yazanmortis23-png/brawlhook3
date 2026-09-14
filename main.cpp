@@ -3,14 +3,14 @@
 // Based on Nexus Brawl reverse engineering
 // tg by @dre6d @HernBrawl
 // BUILD:
-//   Android NDK r27+ with CMake
-//   Target: arm64-v8a
-//   Min SDK: 28
+//    Android NDK r27+ with CMake
+//    Target: arm64-v8a
+//    Min SDK: 28
 //
 // LOAD:
-//   Option A: Add to APK as System.loadLibrary("brawlhook")
-//   Option B: Zygisk module (rooted devices)
-//   Option C: ptrace injection
+//    Option A: Add to APK as System.loadLibrary("brawlhook")
+//    Option B: Zygisk module (rooted devices)
+//    Option C: ptrace injection
 // ============================================================================
 
 #include <jni.h>
@@ -19,7 +19,9 @@
 #include <unistd.h>
 #include <pthread.h>
 #include "hooks/inline_hook.h"
-#include "hooks/game_hooks.cpp"
+
+// إعلان الدالة القادمة من game_hooks.cpp بدون الحاجة لعمل include لملف الـ cpp نفسه
+bool install_game_hooks();
 
 #define LOG_TAG "BrawlHook"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
