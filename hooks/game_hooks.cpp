@@ -24,6 +24,7 @@
 #include "../features/hitbox.h"
 #include "../features/respawn_timer.h"
 #include "../features/tile_grid.h"
+#include "../features/menu.h"
 #include "../../game/offsets_69252.h"
 
 // Trampoline pointers (to call original functions)
@@ -44,7 +45,7 @@ static void* get_local_player(void* game_state) {
     // TODO: Реализовать цепочку указателей
     // Точная структура зависит от того как game_state передаётся
     // в хукнутую функцию. Из реверса:
-    //   GOT_GAME_CONTEXT (0xDD0) -> GOT_ENTITY_LIST (0xD60) -> entity[0]
+    //    GOT_GAME_CONTEXT (0xDD0) -> GOT_ENTITY_LIST (0xD60) -> entity[0]
     // Но это GOT оффсеты чит-модуля, не game_state.
     // Нужно определить как game_state ссылается на entity list.
 
