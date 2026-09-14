@@ -5,7 +5,7 @@
 // by tg @dre6d
 // ============================================================================
 
-#include "../../game/offsets_69252.h"
+#include "../game/offsets_69252.h"
 #include <cstdint>
 #include <cstring>
 
